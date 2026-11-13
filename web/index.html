@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Profile</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Cormorant+Garamond:wght@400;500;600&amp;display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+       body {
+    margin: 0;
+    padding: 30px 0;
+
+    background: url("images/background.png") center center / cover no-repeat fixed;
+
+    font-family: 'Cormorant Garamond', serif;
+}
+        /* MAIN PROFILE CARD */
+
+        .container {
+            position: relative;
+
+            width: 100%;
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            background-color: #fff8ee;
+
+            border: 3px solid #d6a900;
+
+            border-radius: 25px;
+
+            padding: 45px 55px;
+
+            box-shadow:
+                0 0 0 4px #fff1d6,
+                0 12px 30px rgba(0, 0, 0, 0.3);
+
+            overflow: visible;
+        }
+
+        /* TITLE */
+
+        .header {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+
+            color: #85001c;
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #b18469;
+
+            font-size: 16px;
+
+            font-style: italic;
+        }
+
+        .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.divider span {
+    width: 80px;
+    height: 1px;
+    background-color: #d6a900;
+    margin: 0 15px;
+}
+
+        .divider span {
+            width: 80px;
+
+            height: 1px;
+
+            background-color: #d6a900;
+        }
+
+        .divider .flower-symbol {
+            color: #d6a900;
+
+            font-size: 18px;
+        }
+
+        /* FORM */
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+
+            color: #85001c;
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 8px;
+        }
+
+        label::before {
+            content: "✦ ";
+
+            color: #d6a900;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            background-color: #fffdf8;
+
+            border: 1.5px solid #d6a900;
+
+            border-radius: 7px;
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 15px;
+
+            color: #690018;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #85001c;
+
+            box-shadow: 0 0 8px rgba(214, 169, 0, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+
+            min-height: 130px;
+        }
+
+        /* SUBMIT BUTTON */
+
+        .submit-btn {
+            width: 100%;
+
+            padding: 16px;
+
+            background-color: #85001c;
+
+            color: #fff8ee;
+
+            border: 2px solid #d6a900;
+
+            border-radius: 7px;
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #d6a900;
+
+            color: #690018;
+
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+
+            color: #b18469;
+
+            font-size: 14px;
+
+            font-style: italic;
+
+            margin-top: 25px;
+        }
+
+        /* FLOWER AND CAT DECORATIONS */
+
+        .decoration {
+            position: absolute;
+
+            pointer-events: none;
+
+            z-index: 10;
+        }
+
+        /* TOP LEFT FLOWER */
+.top-left-flower {
+    width: 350px;
+    height: auto;
+
+    top: -65px;
+    left: -100px;
+}
+
+/* BOTTOM RIGHT FLOWER */
+.bottom-right-flower {
+    width: 370px;
+    height: auto;
+
+    bottom: -100px;
+    right: -105px;
+}
+
+/* BOTTOM LEFT CAT */
+.bottom-left-cat {
+    width: 300px;
+    height: auto;
+
+    bottom: -75px;
+    left: -110px;
+}
+
+        /* LEFT VINE */
+
+        .left-vine {
+            width: 180px;
+
+            height: 120%;
+
+            top: -10%;
+
+            left: -145px;
+
+            object-fit: fill;
+        }
+
+        /* RIGHT VINE */
+
+        .right-vine {
+            width: 180px;
+
+            height: 120%;
+
+            top: -10%;
+
+            right: -145px;
+
+            object-fit: fill;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 70px 25px;
+            }
+
+            .container {
+                padding: 35px 25px;
+            }
+
+            .top-left-flower {
+                width: 190px;
+
+                top: -65px;
+
+                left: -55px;
+            }
+
+            .bottom-right-flower {
+                width: 210px;
+
+                bottom: -65px;
+
+                right: -60px;
+            }
+
+            .bottom-left-cat {
+                width: 190px;
+
+                bottom: -50px;
+
+                left: -60px;
+            }
+
+            .left-vine {
+                width: 100px;
+
+                left: -70px;
+            }
+
+            .right-vine {
+                width: 100px;
+
+                right: -70px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- DECORATIONS -->
+
+        <img src="images/1.top-left.png"
+             class="decoration top-left-flower"
+             alt="Top left flower">
+
+        <img src="images/2.right-down.png"
+             class="decoration bottom-right-flower"
+             alt="Bottom right flower">
+
+        <img src="images/3.left-bottom.png"
+             class="decoration bottom-left-cat"
+             alt="Sleeping cat">
+
+        <img src="images/4.left-vine.png"
+             class="decoration left-vine"
+             alt="Left floral vine">
+
+        <img src="images/5.right-vine.png"
+             class="decoration right-vine"
+             alt="Right floral vine">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <h1>A Little About Me</h1>
+
+            <p>A personal story, written in my own colours ✧</p>
+
+            <div class="divider">
+                <span></span>
+                <div class="flower-symbol">❀ ✧ ❀</div>
+                <span></span>
+            </div>
+
+        </div>
+
+        <!-- PROFILE FORM -->
+
+        <form action="ProfileServlet" method="post">
+
+            <div class="form-group">
+
+                <label for="name">FULL NAME</label>
+
+                <input type="text"
+                       id="name"
+                       name="name"
+                       placeholder="Enter your full name"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="studentId">STUDENT ID</label>
+
+                <input type="text"
+                       id="studentId"
+                       name="studentId"
+                       placeholder="Enter your student ID"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="programme">PROGRAMME</label>
+
+                <input type="text"
+                       id="programme"
+                       name="programme"
+                       placeholder="Your programme"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="email">EMAIL ADDRESS</label>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="example@email.com"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="hobbies">HOBBIES &amp; INTERESTS</label>
+
+                <input type="text"
+                       id="hobbies"
+                       name="hobbies"
+                       placeholder="What do you enjoy doing?"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="introduction">SHORT SELF-INTRODUCTION</label>
+
+                <textarea id="introduction"
+                          name="introduction"
+                          placeholder="Tell us a little about yourself..."
+                          required></textarea>
+
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit My Profile ✦
+            </button>
+
+        </form>
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+            ❀ Made with love &amp; a little bit of magic ❀
+        </div>
+
+    </div>
+
+</body>
+</html>
